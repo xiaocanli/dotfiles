@@ -1,6 +1,6 @@
 [user]
 	name = Xiaocan Li
-	email = phyxiaolee@gmail.com
+	email = 4249978+xiaocanli@users.noreply.github.com
 [alias]
 	st = status
 	co = checkout
@@ -11,3 +11,5 @@
 	editor = vim
 [credential]
 	helper = cache
+[pull]
+	rebase = false

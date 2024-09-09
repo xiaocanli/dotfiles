@@ -147,6 +147,7 @@ set shellslash
 set grepprg=grep\ -nH\ $*
 map <Leader>lx :<C-U>call SetXeTex()<CR>
 set iskeyword+=:
+let g:tex_conceal = ""
 
 function! FixLastSpellingError()
     normal! mm[s1z=`m
@@ -165,6 +166,7 @@ nnoremap <leader>sop :source %<cr>
 
 " Colors
 colorscheme badwolf
+" colorscheme firewatch
 set background=dark              " [dark or light]
 syntax enable " enable syntax processing.
 
@@ -219,6 +221,8 @@ set updatetime=100              " set update time for gitgutter update
 " Linting & Fixing
 let g:ale_linters = {
       \   'python': ['flake8', 'pylint'],
+      \   'c': ['clang'],
+      \   'cpp': ['clang', 'g++'],
       \}
 let g:ale_fixers = {
       \    'python': ['yapf'],
@@ -230,3 +234,11 @@ let g:ale_fix_on_save = 1
 let g:jedi#use_splits_not_buffers = "left"
 let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 0
+
+" " copy to clipboard
+" set clipboard=unnamedplus
+
+" Disable quote concealing in JSON files
+let g:vim_json_conceal=0
+
+set backspace=indent,eol,start
